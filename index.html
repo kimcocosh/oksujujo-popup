@@ -5,286 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="서울 옥수동 양조장 옥수주조 - 롯데백화점 명동 본점 팝업 행사">
 <title>옥수주조 | OKSUJUJO</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --brown:#8b4513;
-  --brown-dark:#6b2e0a;
-  --gold:#d4af37;
-  --bg:#fefdfb;
-  --bg2:#f5ede0;
-  --bg3:#ede0d0;
-  --text:#2c2c2c;
-  --text2:#666;
-  --border:#e5ddd3;
+  --brown:#8b4513;--brown-dark:#6b2e0a;--gold:#d4af37;
+  --bg:#fefdfb;--bg2:#f5ede0;--bg3:#ede0d0;
+  --text:#2c2c2c;--text2:#666;--border:#e5ddd3;
 }
-html{scroll-behavior:smooth}
-body{
-  font-family:'Noto Sans KR',sans-serif;
-  background:#f0ebe3;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-}
-.wrap{
-  width:100%;
-  max-width:480px;
-  background:var(--bg);
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-}
-
-/* 언어 탭 */
-.lang-bar{
-  display:flex;
-  background:var(--bg);
-  border-bottom:1px solid var(--border);
-  position:sticky;
-  top:0;
-  z-index:100;
-  box-shadow:0 2px 8px rgba(0,0,0,0.06);
-}
-.lang-btn{
-  flex:1;
-  padding:14px 4px;
-  font-size:13px;
-  font-weight:500;
-  border:none;
-  background:transparent;
-  cursor:pointer;
-  color:var(--text2);
-  border-bottom:2px solid transparent;
-  transition:all 0.2s;
-  font-family:'Noto Sans KR',sans-serif;
-}
-.lang-btn.active{
-  color:var(--brown);
-  border-bottom:2px solid var(--gold);
-  background:var(--bg2);
-}
+body{font-family:'Noto Sans KR',sans-serif;background:#f0ebe3;display:flex;justify-content:center}
+.wrap{width:100%;max-width:480px;background:var(--bg);min-height:100vh;display:flex;flex-direction:column}
+.lang-bar{display:flex;background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.lang-btn{flex:1;padding:14px 4px;font-size:13px;font-weight:500;border:none;background:transparent;cursor:pointer;color:var(--text2);border-bottom:2px solid transparent;transition:all 0.2s;font-family:'Noto Sans KR',sans-serif}
+.lang-btn.active{color:var(--brown);border-bottom:2px solid var(--gold);background:var(--bg2)}
 .lang-btn:hover{color:var(--brown);background:var(--bg2)}
-
-/* 페이지 */
-.page{display:none}
-.page.active{display:block}
-
-/* 히어로 */
-.hero{
-  background:linear-gradient(160deg,#f5ede0 0%,#faf6f0 60%,var(--bg) 100%);
-  padding:36px 24px 24px;
-  text-align:center;
-  border-bottom:1px solid var(--border);
-}
-.award-badge{
-  display:inline-block;
-  background:var(--gold);
-  color:var(--brown-dark);
-  font-size:11px;
-  font-weight:700;
-  padding:5px 14px;
-  border-radius:20px;
-  margin-bottom:14px;
-  letter-spacing:0.3px;
-}
-.brand-sub{
-  font-size:13px;
-  color:var(--text2);
-  margin-bottom:6px;
-  letter-spacing:1px;
-}
-.brand-name{
-  font-size:34px;
-  font-weight:700;
-  color:var(--brown);
-  margin-bottom:16px;
-  letter-spacing:-1px;
-}
-.event-box{
-  background:var(--brown);
-  color:#fff;
-  border-radius:10px;
-  padding:12px 20px;
-  font-size:13px;
-  line-height:1.7;
-}
-.event-box strong{
-  font-size:15px;
-  display:block;
-  margin-bottom:2px;
-}
-
-/* 섹션 */
+.page{display:none}.page.active{display:block}
+.hero{background:linear-gradient(160deg,#f5ede0 0%,#faf6f0 60%,var(--bg) 100%);padding:36px 24px 24px;text-align:center;border-bottom:1px solid var(--border)}
+.award-badge{display:inline-block;background:var(--gold);color:var(--brown-dark);font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:14px}
+.brand-sub{font-size:13px;color:var(--text2);margin-bottom:6px;letter-spacing:1px}
+.brand-name{font-size:34px;font-weight:700;color:var(--brown);margin-bottom:16px;letter-spacing:-1px}
+.event-box{background:var(--brown);color:#fff;border-radius:10px;padding:12px 20px;font-size:13px;line-height:1.7}
+.event-box strong{font-size:15px;display:block;margin-bottom:2px}
+.intro-box{background:var(--bg2);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:16px;margin:20px 20px 0;font-size:13px;line-height:1.7;color:var(--text)}
+.intro-box .intro-title{font-size:15px;font-weight:700;color:var(--brown);margin-bottom:8px}
+.intro-box .intro-desc{color:var(--text2);margin-bottom:12px;line-height:1.8}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.badge{background:#fff;border:1px solid var(--border);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:700;color:var(--brown)}
+.badge-green{background:#e8f5e9;border-color:#a5d6a7;color:#2e7d32}
 .section{padding:20px 20px 0}
-.sec-title{
-  font-size:13px;
-  font-weight:700;
-  color:var(--brown);
-  border-left:3px solid var(--gold);
-  padding-left:10px;
-  margin-bottom:14px;
-  text-transform:uppercase;
-  letter-spacing:0.5px;
-}
-
-/* 카드 */
-.card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:16px;
-  margin-bottom:10px;
-}
-.card-title{
-  font-size:15px;
-  font-weight:700;
-  color:var(--text);
-  margin-bottom:5px;
-}
-.card-desc{
-  font-size:13px;
-  color:var(--text2);
-  line-height:1.7;
-}
-.price-tag{
-  display:inline-block;
-  background:var(--gold);
-  color:var(--brown-dark);
-  font-size:12px;
-  font-weight:700;
-  padding:4px 10px;
-  border-radius:5px;
-  margin-top:8px;
-}
-.free-tag{
-  display:inline-block;
-  background:var(--bg2);
-  color:var(--brown);
-  font-size:12px;
-  font-weight:700;
-  padding:4px 10px;
-  border-radius:5px;
-  margin-top:8px;
-  border:1px solid var(--bg3);
-}
-
-/* 제품 그리드 */
-.products-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:8px;
-  margin-bottom:10px;
-}
-.prod-item{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:12px 10px;
-  text-align:center;
-}
-.prod-item strong{
-  display:block;
-  font-size:13px;
-  font-weight:700;
-  color:var(--text);
-  margin-bottom:3px;
-}
-.prod-item span{
-  font-size:11px;
-  color:var(--text2);
-}
-
-/* 이벤트 아이템 */
-.event-item{
-  display:flex;
-  gap:12px;
-  align-items:flex-start;
-  padding:12px 0;
-  border-bottom:1px solid var(--border);
-}
+.sec-title{font-size:13px;font-weight:700;color:var(--brown);border-left:3px solid var(--gold);padding-left:10px;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.5px}
+.card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:10px}
+.card-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:5px}
+.card-desc{font-size:13px;color:var(--text2);line-height:1.7}
+.price-tag{display:inline-block;background:var(--gold);color:var(--brown-dark);font-size:12px;font-weight:700;padding:4px 10px;border-radius:5px;margin-top:8px}
+.free-tag{display:inline-block;background:var(--bg2);color:var(--brown);font-size:12px;font-weight:700;padding:4px 10px;border-radius:5px;margin-top:8px;border:1px solid var(--bg3)}
+.products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px}
+.prod-item{background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px 10px}
+.prod-item .prod-emoji{font-size:24px;display:block;margin-bottom:4px}
+.prod-item strong{display:block;font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px}
+.prod-item span{font-size:11px;color:var(--text2);line-height:1.4;display:block}
+.bag-icons{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.bag-icon{background:var(--bg2);border-radius:20px;padding:4px 10px;font-size:12px;color:var(--brown)}
+.event-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border)}
 .event-item:last-child{border-bottom:none}
-.event-icon{
-  width:36px;
-  height:36px;
-  background:var(--bg2);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  font-size:18px;
-}
-.event-text strong{
-  display:block;
-  font-size:14px;
-  font-weight:700;
-  color:var(--text);
-  margin-bottom:3px;
-}
-.event-text p{
-  font-size:12px;
-  color:var(--text2);
-  line-height:1.6;
-}
-
-/* 인스타 버튼 */
-.insta-btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
-  color:#fff;
-  text-decoration:none;
-  padding:14px 20px;
-  border-radius:10px;
-  font-size:14px;
-  font-weight:700;
-  margin:16px 0 8px;
-  transition:opacity 0.2s;
-}
+.event-icon{width:40px;height:40px;background:var(--bg2);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px}
+.event-text strong{display:block;font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px}
+.event-text p{font-size:12px;color:var(--text2);line-height:1.6}
+.insta-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;text-decoration:none;padding:14px 20px;border-radius:10px;font-size:14px;font-weight:700;margin:16px 0 8px;transition:opacity 0.2s}
 .insta-btn:hover{opacity:0.9}
 .insta-btn svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
-
-/* 푸터 */
-.footer{
-  background:var(--brown);
-  padding:24px 20px;
-  text-align:center;
-  color:#fff;
-  margin-top:auto;
-}
-.footer-brand{
-  font-size:18px;
-  font-weight:700;
-  margin-bottom:8px;
-  letter-spacing:-0.5px;
-}
-.footer-info{
-  font-size:12px;
-  opacity:0.85;
-  line-height:1.9;
-}
-.footer-insta{
-  color:var(--gold);
-  font-weight:700;
-  text-decoration:none;
-}
-.footer-insta:hover{opacity:0.8}
-
-/* 섹션 하단 여백 */
+.footer{background:var(--brown);padding:24px 20px;text-align:center;color:#fff;margin-top:auto}
+.footer-brand{font-size:18px;font-weight:700;margin-bottom:8px}
+.footer-info{font-size:12px;opacity:0.85;line-height:1.9}
+.footer-insta{color:var(--gold);font-weight:700;text-decoration:none}
 .section-last{padding-bottom:24px}
-
-/* 일본어/중국어 */
 #ja,#ja *{font-family:'Noto Sans JP',sans-serif}
 #zh,#zh *{font-family:'Noto Sans SC',sans-serif}
 </style>
 </head>
 <body>
 <div class="wrap">
-
 <div class="lang-bar">
   <button class="lang-btn active" onclick="switchLang('ko',this)">한국어</button>
   <button class="lang-btn" onclick="switchLang('en',this)">English</button>
@@ -292,53 +72,56 @@ body{
   <button class="lang-btn" onclick="switchLang('ja',this)">日本語</button>
 </div>
 
-<!-- ==================== 한국어 ==================== -->
+<!-- ====== 한국어 ====== -->
 <div id="ko" class="page active">
   <div class="hero">
     <div class="award-badge">🏆 3년 연속 대한민국 주류대상 대상</div>
     <div class="brand-sub">서울 옥수동 양조장</div>
     <div class="brand-name">옥수·주조</div>
-    <div class="event-box">
-      <strong>롯데백화점 명동 본점 B1 식품관</strong>
-      2026.06.05(금) ~ 06.11(목)
+    <div class="event-box"><strong>롯데백화점 명동 본점 B1 식품관</strong>2026.06.05(금) ~ 06.11(목)</div>
+  </div>
+  <div class="intro-box">
+    <div class="intro-title">🍶 옥수주조란?</div>
+    <div class="intro-desc">서울 옥수동에서 탄생한 생 막걸리 양조장입니다. 쌀과 진짜 과일·구황작물만 사용해 만든 깨끗한 전통주입니다.</div>
+    <div class="badges">
+      <span class="badge badge-green">🌾 글루텐 프리</span>
+      <span class="badge">🚫 무탄산 생막걸리</span>
+      <span class="badge">🍬 무감미료</span>
+      <span class="badge">🎨 무색소</span>
+      <span class="badge">🌸 무착향료</span>
+      <span class="badge">🍓 진짜 과일·작물 사용</span>
     </div>
   </div>
-
   <div class="section">
     <div class="sec-title">무료 시음</div>
     <div class="card">
       <div class="card-title">자유로운 시음이 가능합니다!</div>
-      <div class="card-desc">구매 전 다양한 맛을 직접 경험해보세요. 시음 후 마음에 드는 제품을 선택하실 수 있습니다. 보냉백에 담아드려요!</div>
+      <div class="card-desc">구매 전 모든 맛을 직접 경험해보세요.</div>
       <span class="free-tag">FREE TASTING</span>
     </div>
   </div>
-
   <div class="section">
     <div class="sec-title">9도 막걸리 (500ml)</div>
     <div class="products-grid">
-      <div class="prod-item"><strong>오리지널</strong><span>참쌀 본연의 맛</span></div>
-      <div class="prod-item"><strong>옥수수</strong><span>구수한 곡물향</span></div>
-      <div class="prod-item"><strong>고구마</strong><span>진한 고구마</span></div>
-      <div class="prod-item"><strong>망고</strong><span>달콤상큼</span></div>
-      <div class="prod-item"><strong>블러드오렌지</strong><span>은은한 단맛</span></div>
-      <div class="prod-item"><strong>패션후르츠</strong><span>백가지 향</span></div>
-      <div class="prod-item"><strong>토마토</strong><span>신선한 산미</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍚</span><strong>오리지널</strong><span>참쌀 본연의 달콤함, 막걸리 입문에 딱!</span></div>
+      <div class="prod-item"><span class="prod-emoji">🌽</span><strong>옥수수</strong><span>100% 국내산 옥수수, 구수하고 달달</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍠</span><strong>고구마</strong><span>진한 고구마 본연의 달콤함</span></div>
+      <div class="prod-item"><span class="prod-emoji">🥭</span><strong>망고</strong><span>100% 진짜 망고, 달콤상큼한 열대과일</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍊</span><strong>블러드오렌지</strong><span>은은한 단맛과 과즙 가득</span></div>
+      <div class="prod-item"><span class="prod-emoji">💛</span><strong>패션후르츠</strong><span>이국적인 향과 독특한 풍미</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍅</span><strong>토마토</strong><span>신선한 토마토의 은은한 산미</span></div>
     </div>
     <div style="text-align:center;margin-bottom:10px"><span class="price-tag">1병 7,000원</span></div>
     <div class="card">
       <div class="card-title">🛍️ 행사장 특별가 세트</div>
-      <div class="card-desc">
-        A세트: 3병 선택 + 고급보냉백 → <strong>20,000원</strong><br>
-        B세트: 6병 선택 + 프리미엄보냉백 → <strong>35,000원</strong><br>
-        6병 이상 추가 구매 시 1병당 5,000원
-      </div>
+      <div class="card-desc">A세트: 3병 + 고급보냉백 → <strong>20,000원</strong><br>B세트: 6병 + 프리미엄보냉백 → <strong>35,000원</strong><br>6병 이상 추가 구매 시 1병당 5,000원</div>
+      <div class="bag-icons"><span class="bag-icon">❄️ 냉장 보관</span><span class="bag-icon">✈️ 여행 선물용</span><span class="bag-icon">🎁 선물 포장</span></div>
     </div>
   </div>
-
   <div class="section">
-    <div class="sec-title">우죽15 프리미엄 막걸리 (750ml)</div>
+    <div class="sec-title">옥주15 프리미엄 막걸리 (750ml)</div>
     <div class="card">
-      <div class="card-title">감(甘) · 산(酸) · 무(無)</div>
+      <div class="card-title">감(甘) · 신(酸) · 무(無)</div>
       <div class="card-desc">김포 쌀로 빚은 세 가지 여운. 와인효모 발효 | ALC 15% | 국내산 햅쌀</div>
       <span class="price-tag">특별가 20,000원</span>
     </div>
@@ -348,91 +131,70 @@ body{
       <span class="price-tag">특별가 20,000원</span>
     </div>
   </div>
-
   <div class="section section-last">
     <div class="sec-title">🎁 이벤트</div>
     <div class="card">
-      <div class="event-item">
-        <div class="event-icon">🍪</div>
-        <div class="event-text">
-          <strong>포춘쿠키 랜덤 증정</strong>
-          <p>모든 구매 고객님께 드립니다<br>A상: 유리컵 / B상: 오키 캐릭터 키링</p>
-        </div>
-      </div>
-      <div class="event-item">
-        <div class="event-icon">🎁</div>
-        <div class="event-text">
-          <strong>도자기 잔 2종 세트</strong>
-          <p>4만원 이상 구매 시 증정 | 선착순 100set 한정<br>직접 유약을 바르고 구운 수제 도자기</p>
-        </div>
-      </div>
-      <div class="event-item">
-        <div class="event-icon">🌿</div>
-        <div class="event-text">
-          <strong>영수증 이벤트 | 향나무 분재</strong>
-          <p>영수증에 성함·연락처 기입 후 응모<br>응모기간: 06.05~11 | 당첨발표: 06.13</p>
-        </div>
-      </div>
+      <div class="event-item"><div class="event-icon">🍪</div><div class="event-text"><strong>포춘쿠키 랜덤 증정</strong><p>모든 구매 고객님께 드립니다<br>A상: 유리컵 / B상: 오키 캐릭터 키링</p></div></div>
+      <div class="event-item"><div class="event-icon">🎁</div><div class="event-text"><strong>도자기 잔 2종 세트</strong><p>4만원 이상 구매 시 증정 | 선착순 100set 한정<br>직접 유약을 바르고 구운 수제 도자기</p></div></div>
+      <div class="event-item"><div class="event-icon">🌿</div><div class="event-text"><strong>영수증 이벤트 | 향나무 분재</strong><p>영수증에 성함·연락처 기입 후 응모<br>응모기간: 06.05~11 | 당첨발표: 06.13</p></div></div>
     </div>
     <a href="https://www.instagram.com/oksujujo" target="_blank" class="insta-btn">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
       @oksujujo 팔로우하기
     </a>
   </div>
-
   <div class="footer">
     <div class="footer-brand">옥수·주조</div>
-    <div class="footer-info">
-      롯데백화점 명동 본점 B1 식품관<br>
-      2026.06.05(금) ~ 06.11(목)<br>
-      <a href="https://www.instagram.com/oksujujo" target="_blank" class="footer-insta">@oksujujo</a>
-    </div>
+    <div class="footer-info">롯데백화점 명동 본점 B1 식품관<br>2026.06.05(금) ~ 06.11(목)<br><a href="https://www.instagram.com/oksujujo" target="_blank" class="footer-insta">@oksujujo</a></div>
   </div>
 </div>
 
-<!-- ==================== English ==================== -->
+<!-- ====== English ====== -->
 <div id="en" class="page">
   <div class="hero">
     <div class="award-badge">🏆 3x Korea Wine & Spirits Award</div>
     <div class="brand-sub">Seoul Oksu-dong Brewery</div>
     <div class="brand-name">OKSUJUJO</div>
-    <div class="event-box">
-      <strong>Lotte Dept. Store Myeongdong B1 Food Hall</strong>
-      Jun 5 (Fri) ~ Jun 11 (Thu), 2026
+    <div class="event-box"><strong>Lotte Dept. Store Myeongdong B1 Food Hall</strong>Jun 5 (Fri) ~ Jun 11 (Thu), 2026</div>
+  </div>
+  <div class="intro-box">
+    <div class="intro-title">🍶 What is OKSUJUJO?</div>
+    <div class="intro-desc">We are a live (unpasteurized) traditional Korean rice wine brewery from Seoul, est. 2022. Made from rice + 100% real fruit & grains. No wheat. No additives. Just pure nature.</div>
+    <div class="badges">
+      <span class="badge badge-green">🌾 GLUTEN FREE</span>
+      <span class="badge">🚫 Not carbonated</span>
+      <span class="badge">🍬 No sweeteners</span>
+      <span class="badge">🎨 No artificial colors</span>
+      <span class="badge">🌸 No artificial flavors</span>
+      <span class="badge">🍓 Real fruit & grain only</span>
     </div>
   </div>
-
   <div class="section">
     <div class="sec-title">Free Tasting</div>
     <div class="card">
       <div class="card-title">Taste before you buy!</div>
-      <div class="card-desc">Try all our flavors for free before purchasing. Our staff will be happy to guide you. We'll pack your order in a cool insulated bag!</div>
+      <div class="card-desc">Try all our flavors for free. Our staff will guide you through each unique taste.</div>
       <span class="free-tag">FREE TASTING</span>
     </div>
   </div>
-
   <div class="section">
     <div class="sec-title">9% Makgeolli (500ml)</div>
     <div class="products-grid">
-      <div class="prod-item"><strong>Original</strong><span>Classic rice taste</span></div>
-      <div class="prod-item"><strong>Sweet Corn</strong><span>Nutty & sweet</span></div>
-      <div class="prod-item"><strong>Sweet Potato</strong><span>Rich & warm</span></div>
-      <div class="prod-item"><strong>Mango</strong><span>Tropical sweet</span></div>
-      <div class="prod-item"><strong>Blood Orange</strong><span>Subtle citrus</span></div>
-      <div class="prod-item"><strong>Passion Fruit</strong><span>Exotic aroma</span></div>
-      <div class="prod-item"><strong>Tomato</strong><span>Fresh & tangy</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍚</span><strong>Original</strong><span>Classic & creamy, perfect intro to makgeolli</span></div>
+      <div class="prod-item"><span class="prod-emoji">🌽</span><strong>Sweet Corn</strong><span>100% real Korean corn, nutty & naturally sweet</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍠</span><strong>Sweet Potato</strong><span>Rich, warm & naturally sweet</span></div>
+      <div class="prod-item"><span class="prod-emoji">🥭</span><strong>Mango</strong><span>100% real mango, no artificial flavor — tropical bliss</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍊</span><strong>Blood Orange</strong><span>Subtly sweet with fresh citrus juice</span></div>
+      <div class="prod-item"><span class="prod-emoji">💛</span><strong>Passion Fruit</strong><span>Exotic, aromatic & uniquely complex</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍅</span><strong>Tomato</strong><span>Fresh & lightly tangy — surprisingly delicious</span></div>
     </div>
     <div style="text-align:center;margin-bottom:10px"><span class="price-tag">7,000 KRW / bottle</span></div>
     <div class="card">
       <div class="card-title">🛍️ Special Bundle Sets</div>
-      <div class="card-desc">
-        A Set: 3 bottles + insulated bag → <strong>20,000 KRW</strong><br>
-        B Set: 6 bottles + premium bag → <strong>35,000 KRW</strong><br>
-        Additional bottles: 5,000 KRW each (6+ bottles)
-      </div>
+      <div class="card-desc">A Set: 3 bottles + insulated bag → <strong>20,000 KRW</strong><br>B Set: 6 bottles + premium bag → <strong>35,000 KRW</strong><br>Extra bottles: 5,000 KRW each (6+)</div>
+      <div class="bag-icons"><span class="bag-icon">❄️ Kept cold</span><span class="bag-icon">✈️ Travel-friendly</span><span class="bag-icon">🎁 Great gift</span></div>
     </div>
   </div>
-
   <div class="section">
     <div class="sec-title">OKJU15 Premium (750ml)</div>
     <div class="card">
@@ -446,84 +208,69 @@ body{
       <span class="price-tag">Special price 20,000 KRW</span>
     </div>
   </div>
-
   <div class="section section-last">
     <div class="sec-title">🎁 Events</div>
     <div class="card">
-      <div class="event-item">
-        <div class="event-icon">🍪</div>
-        <div class="event-text">
-          <strong>Fortune Cookie Gift</strong>
-          <p>Every purchase gets a random fortune cookie<br>Prize A: Glass cup / Prize B: Character keyring</p>
-        </div>
-      </div>
-      <div class="event-item">
-        <div class="event-icon">🎁</div>
-        <div class="event-text">
-          <strong>Ceramic Cup Set (2pcs)</strong>
-          <p>Free gift with 40,000 KRW+ purchase<br>First 100 sets only — handmade pottery</p>
-        </div>
-      </div>
+      <div class="event-item"><div class="event-icon">🍪</div><div class="event-text"><strong>Fortune Cookie Gift</strong><p>Every purchase gets a random fortune cookie<br>Prize A: 🥤 Glass cup / Prize B: 🔑 Character keyring</p></div></div>
+      <div class="event-item"><div class="event-icon">🎁</div><div class="event-text"><strong>Ceramic Cup Set (2pcs)</strong><p>Free gift with 40,000 KRW+ purchase<br>First 100 sets only — handmade pottery</p></div></div>
     </div>
     <a href="https://www.instagram.com/oksujujo" target="_blank" class="insta-btn">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
       Follow @oksujujo
     </a>
   </div>
-
   <div class="footer">
     <div class="footer-brand">OKSUJUJO</div>
-    <div class="footer-info">
-      Lotte Dept. Myeongdong B1 Food Hall<br>
-      Jun 5 ~ Jun 11, 2026<br>
-      <a href="https://www.instagram.com/oksujujo" target="_blank" class="footer-insta">@oksujujo</a>
-    </div>
+    <div class="footer-info">Lotte Dept. Myeongdong B1 Food Hall<br>Jun 5 ~ Jun 11, 2026<br><a href="https://www.instagram.com/oksujujo" target="_blank" class="footer-insta">@oksujujo</a></div>
   </div>
 </div>
 
-<!-- ==================== 中文 ==================== -->
+<!-- ====== 中文 ====== -->
 <div id="zh" class="page">
   <div class="hero">
     <div class="award-badge">🏆 连续3年韩国酒类大奖</div>
     <div class="brand-sub">首尔玉水洞酿造厂</div>
     <div class="brand-name">玉水·酒造</div>
-    <div class="event-box">
-      <strong>乐天百货明洞本店 B1 食品馆</strong>
-      2026.06.05(五) ~ 06.11(四)
+    <div class="event-box"><strong>乐天百货明洞本店 B1 食品馆</strong>2026.06.05(五) ~ 06.11(四)</div>
+  </div>
+  <div class="intro-box">
+    <div class="intro-title">🍶 玉水·酒造是什么？</div>
+    <div class="intro-desc">我们是一家位于首尔玉水洞的传统韩国米酒酿造厂，成立于2022年。仅使用大米和100%真实水果及天然谷物酿造。无小麦，无任何添加剂，纯天然。</div>
+    <div class="badges">
+      <span class="badge badge-green">🌾 无麸质 GLUTEN FREE</span>
+      <span class="badge">🚫 非碳酸 生米酒</span>
+      <span class="badge">🍬 无甜味剂</span>
+      <span class="badge">🎨 无人工色素</span>
+      <span class="badge">🌸 无人工香料</span>
+      <span class="badge">🍓 100%真实水果谷物</span>
     </div>
   </div>
-
   <div class="section">
     <div class="sec-title">免费试饮</div>
     <div class="card">
       <div class="card-title">购买前先免费试饮！</div>
-      <div class="card-desc">欢迎免费品尝所有口味的马格利酒。工作人员将为您提供专业引导。购买后装入保冷袋带走！</div>
+      <div class="card-desc">欢迎免费品尝所有口味。工作人员将为您提供专业引导。</div>
       <span class="free-tag">免费试饮</span>
     </div>
   </div>
-
   <div class="section">
     <div class="sec-title">9度马格利酒 (500ml)</div>
     <div class="products-grid">
-      <div class="prod-item"><strong>原味</strong><span>糯米本来味道</span></div>
-      <div class="prod-item"><strong>玉米</strong><span>香甜谷物</span></div>
-      <div class="prod-item"><strong>红薯</strong><span>浓郁香甜</span></div>
-      <div class="prod-item"><strong>芒果</strong><span>热带甜香</span></div>
-      <div class="prod-item"><strong>血橙</strong><span>清淡柑橘</span></div>
-      <div class="prod-item"><strong>百香果</strong><span>异域芳香</span></div>
-      <div class="prod-item"><strong>番茄</strong><span>清新酸爽</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍚</span><strong>原味</strong><span>经典糯米口味，马格利酒入门首选</span></div>
+      <div class="prod-item"><span class="prod-emoji">🌽</span><strong>玉米</strong><span>100%真实韩国玉米，香甜浓郁</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍠</span><strong>红薯</strong><span>浓郁香甜，口感丰富自然</span></div>
+      <div class="prod-item"><span class="prod-emoji">🥭</span><strong>芒果</strong><span>100%真实芒果，无人工香料，热带甜香</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍊</span><strong>血橙</strong><span>清淡甜味带新鲜柑橘果汁香</span></div>
+      <div class="prod-item"><span class="prod-emoji">💛</span><strong>百香果</strong><span>异域风情，香气独特复杂</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍅</span><strong>番茄</strong><span>清新微酸，出乎意料的美味</span></div>
     </div>
     <div style="text-align:center;margin-bottom:10px"><span class="price-tag">每瓶 7,000韩元</span></div>
     <div class="card">
       <div class="card-title">🛍️ 活动特别套装</div>
-      <div class="card-desc">
-        A套装: 3瓶 + 保冷袋 → <strong>20,000韩元</strong><br>
-        B套装: 6瓶 + 高级保冷袋 → <strong>35,000韩元</strong><br>
-        6瓶以上追加购买每瓶5,000韩元
-      </div>
+      <div class="card-desc">A套装: 3瓶 + 保冷袋 → <strong>20,000韩元</strong><br>B套装: 6瓶 + 高级保冷袋 → <strong>35,000韩元</strong><br>6瓶以上追加每瓶5,000韩元</div>
+      <div class="bag-icons"><span class="bag-icon">❄️ 保持冷藏</span><span class="bag-icon">✈️ 方便携带出行</span><span class="bag-icon">🎁 完美伴手礼</span></div>
     </div>
   </div>
-
   <div class="section">
     <div class="sec-title">玉酒15 高级款 (750ml)</div>
     <div class="card">
@@ -537,84 +284,69 @@ body{
       <span class="price-tag">特别价 20,000韩元</span>
     </div>
   </div>
-
   <div class="section section-last">
     <div class="sec-title">🎁 活动</div>
     <div class="card">
-      <div class="event-item">
-        <div class="event-icon">🍪</div>
-        <div class="event-text">
-          <strong>幸运饼干随机赠送</strong>
-          <p>所有购买顾客均可获得<br>A奖: 玻璃杯 / B奖: 角色钥匙扣</p>
-        </div>
-      </div>
-      <div class="event-item">
-        <div class="event-icon">🎁</div>
-        <div class="event-text">
-          <strong>陶瓷杯套装 (2件)</strong>
-          <p>购买满40,000韩元赠送 | 仅限前100套<br>纯手工制作陶瓷杯</p>
-        </div>
-      </div>
+      <div class="event-item"><div class="event-icon">🍪</div><div class="event-text"><strong>幸运饼干随机赠送</strong><p>所有购买顾客均可获得<br>A奖: 🥤 玻璃杯 / B奖: 🔑 角色钥匙扣</p></div></div>
+      <div class="event-item"><div class="event-icon">🎁</div><div class="event-text"><strong>陶瓷杯套装 (2件)</strong><p>购买满40,000韩元赠送 | 仅限前100套<br>纯手工制作陶瓷杯</p></div></div>
     </div>
     <a href="https://www.instagram.com/oksujujo" target="_blank" class="insta-btn">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
       关注 @oksujujo
     </a>
   </div>
-
   <div class="footer">
     <div class="footer-brand">玉水·酒造</div>
-    <div class="footer-info">
-      乐天百货明洞本店 B1 食品馆<br>
-      2026.06.05 ~ 06.11<br>
-      <a href="https://www.instagram.com/oksujujo" target="_blank" class="footer-insta">@oksujujo</a>
-    </div>
+    <div class="footer-info">乐天百货明洞本店 B1 食品馆<br>2026.06.05 ~ 06.11<br><a href="https://www.instagram.com/oksujujo" target="_blank" class="footer-insta">@oksujujo</a></div>
   </div>
 </div>
 
-<!-- ==================== 日本語 ==================== -->
+<!-- ====== 日本語 ====== -->
 <div id="ja" class="page">
   <div class="hero">
     <div class="award-badge">🏆 3年連続 韓国酒類大賞 大賞</div>
     <div class="brand-sub">ソウル 玉水洞 醸造所</div>
     <div class="brand-name">玉水・酒造</div>
-    <div class="event-box">
-      <strong>ロッテ百貨店 明洞本店 B1 食品館</strong>
-      2026.06.05(金) ~ 06.11(木)
+    <div class="event-box"><strong>ロッテ百貨店 明洞本店 B1 食品館</strong>2026.06.05(金) ~ 06.11(木)</div>
+  </div>
+  <div class="intro-box">
+    <div class="intro-title">🍶 玉水・酒造とは？</div>
+    <div class="intro-desc">2022年創業、ソウル玉水洞の生マッコリ醸造所です。米と100%本物のフルーツ・穀物だけで醸造。小麦不使用。人工添加物一切なし。</div>
+    <div class="badges">
+      <span class="badge badge-green">🌾 グルテンフリー</span>
+      <span class="badge">🚫 非炭酸 生マッコリ</span>
+      <span class="badge">🍬 甘味料不使用</span>
+      <span class="badge">🎨 着色料不使用</span>
+      <span class="badge">🌸 香料不使用</span>
+      <span class="badge">🍓 本物のフルーツ・穀物</span>
     </div>
   </div>
-
   <div class="section">
     <div class="sec-title">無料試飲</div>
     <div class="card">
       <div class="card-title">購入前にぜひ無料試飲を！</div>
-      <div class="card-desc">全フレーバーを無料でお試しいただけます。スタッフが丁寧にご案内いたします。保冷バッグに入れてお渡しします！</div>
+      <div class="card-desc">全フレーバーを無料でお試しいただけます。スタッフが丁寧にご案内します。</div>
       <span class="free-tag">無料試飲</span>
     </div>
   </div>
-
   <div class="section">
     <div class="sec-title">9度 マッコリ (500ml)</div>
     <div class="products-grid">
-      <div class="prod-item"><strong>オリジナル</strong><span>もち米本来の味</span></div>
-      <div class="prod-item"><strong>とうもろこし</strong><span>香ばしい穀物</span></div>
-      <div class="prod-item"><strong>さつまいも</strong><span>濃厚な甘み</span></div>
-      <div class="prod-item"><strong>マンゴー</strong><span>南国の甘さ</span></div>
-      <div class="prod-item"><strong>ブラッドオレンジ</strong><span>爽やかな柑橘</span></div>
-      <div class="prod-item"><strong>パッションフルーツ</strong><span>エキゾチックな香り</span></div>
-      <div class="prod-item"><strong>トマト</strong><span>さわやかな酸味</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍚</span><strong>オリジナル</strong><span>クラシックでクリーミー、マッコリ入門に最適</span></div>
+      <div class="prod-item"><span class="prod-emoji">🌽</span><strong>とうもろこし</strong><span>100%本物の韓国産とうもろこし、香ばしく甘い</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍠</span><strong>さつまいも</strong><span>濃厚で自然な甘み、まろやかな口当たり</span></div>
+      <div class="prod-item"><span class="prod-emoji">🥭</span><strong>マンゴー</strong><span>100%本物のマンゴー使用、トロピカルな甘さ</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍊</span><strong>ブラッドオレンジ</strong><span>ほんのり甘く爽やかな柑橘の果汁香る</span></div>
+      <div class="prod-item"><span class="prod-emoji">💛</span><strong>パッションフルーツ</strong><span>エキゾチックで複雑な香り</span></div>
+      <div class="prod-item"><span class="prod-emoji">🍅</span><strong>トマト</strong><span>爽やかな酸味、意外なおいしさ</span></div>
     </div>
     <div style="text-align:center;margin-bottom:10px"><span class="price-tag">1本 7,000ウォン</span></div>
     <div class="card">
       <div class="card-title">🛍️ 会場限定セット</div>
-      <div class="card-desc">
-        Aセット: 3本 + 保冷バッグ → <strong>20,000ウォン</strong><br>
-        Bセット: 6本 + 高級保冷バッグ → <strong>35,000ウォン</strong><br>
-        6本以上追加購入は1本5,000ウォン
-      </div>
+      <div class="card-desc">Aセット: 3本 + 保冷バッグ → <strong>20,000ウォン</strong><br>Bセット: 6本 + 高級保冷バッグ → <strong>35,000ウォン</strong><br>6本以上追加購入は1本5,000ウォン</div>
+      <div class="bag-icons"><span class="bag-icon">❄️ 冷たいまま持ち帰り</span><span class="bag-icon">✈️ 旅行のお土産に</span><span class="bag-icon">🎁 ギフトに最適</span></div>
     </div>
   </div>
-
   <div class="section">
     <div class="sec-title">玉酒15 プレミアム (750ml)</div>
     <div class="card">
@@ -628,38 +360,20 @@ body{
       <span class="price-tag">特別価格 20,000ウォン</span>
     </div>
   </div>
-
   <div class="section section-last">
     <div class="sec-title">🎁 イベント</div>
     <div class="card">
-      <div class="event-item">
-        <div class="event-icon">🍪</div>
-        <div class="event-text">
-          <strong>フォーチュンクッキープレゼント</strong>
-          <p>全購入者にランダムでプレゼント<br>A賞: グラス / B賞: キャラクターキーリング</p>
-        </div>
-      </div>
-      <div class="event-item">
-        <div class="event-icon">🎁</div>
-        <div class="event-text">
-          <strong>陶器カップセット (2個)</strong>
-          <p>40,000ウォン以上ご購入のお客様 | 先着100セット限定<br>手作り陶器カップ</p>
-        </div>
-      </div>
+      <div class="event-item"><div class="event-icon">🍪</div><div class="event-text"><strong>フォーチュンクッキープレゼント</strong><p>全購入者にランダムでプレゼント<br>A賞: 🥤 グラス / B賞: 🔑 キャラクターキーリング</p></div></div>
+      <div class="event-item"><div class="event-icon">🎁</div><div class="event-text"><strong>陶器カップセット (2個)</strong><p>40,000ウォン以上ご購入のお客様 | 先着100セット限定<br>手作り陶器カップ</p></div></div>
     </div>
     <a href="https://www.instagram.com/oksujujo" target="_blank" class="insta-btn">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
       @oksujujo をフォロー
     </a>
   </div>
-
   <div class="footer">
     <div class="footer-brand">玉水・酒造</div>
-    <div class="footer-info">
-      ロッテ百貨店 明洞本店 B1 食品館<br>
-      2026.06.05 ~ 06.11<br>
-      <a href="https://www.instagram.com/oksujujo" target="_blank" class="footer-insta">@oksujujo</a>
-    </div>
+    <div class="footer-info">ロッテ百貨店 明洞本店 B1 食品館<br>2026.06.05 ~ 06.11<br><a href="https://www.instagram.com/oksujujo" target="_blank" class="footer-insta">@oksujujo</a></div>
   </div>
 </div>
 
